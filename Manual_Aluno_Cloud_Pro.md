@@ -563,7 +563,6 @@ Após o deploy, a engenharia não acaba. Precisamos monitorar. No console do Goo
 
 ## 7. Desafio Extra (Para casa)
 
-Tente alterar o `main.py` para receber um parâmetro na URL, por exemplo `/saudacao/Daniel`, e retornar `{"message": "Olá, Daniel"}`.
-*Dica: Pesquise por "Flask Dynamic Routing".*
+Tente alterar o main.py para receber um parâmetro na URL, por exemplo /saudacao/Daniel, e retornar {"message": "Olá, Daniel"}. Dica: Pesquise por "Flask Dynamic Routing".
 
-Outro desafio: Descomente o código do Gemini na rota `/ia/gerar` do `src/main.py`, obtenha uma API Key do Google AI Studio e faça sua API interagir com o Gemini de verdade!
+Outro desafio: Descomente o código do Gemini na rota /ia/gerar do main.py, obtenha uma API Key do Google AI Studio e faça sua API interagir com o Gemini de verdade!
