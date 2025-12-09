@@ -1,0 +1,4 @@
+Flask==3.0.0
+gunicorn==21.2.0
+google-generativeai==0.3.1 # Para quem for testar o Gemini real (descomentado no main.py)
+werkzeug==3.0.1
