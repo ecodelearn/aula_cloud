@@ -44,10 +44,11 @@ Antes de codificar, definimos o que o sistema deve ser.
 ### 2.1 Requisitos Funcionais (RF)
 *O que o sistema faz.*
 
-*   **RF01 - Saudação Pública:** O sistema deve expor um endpoint raiz (`GET /`) que retorne uma mensagem de boas-vindas e o timestamp atual do servidor.
-*   **RF02 - Formato de Resposta:** Todas as respostas devem estar estritamente no formato **JSON** (`application/json`).
-*   **RF03 - Health Check:** (Opcional) O sistema deve responder a requisições de monitoramento para indicar que está online.
+*   **RF01 - Interface Web (Frontend):** O sistema deve servir uma página HTML na rota raiz (`GET /`) contendo informações sobre o projeto e controles de interação visual.
+*   **RF02 - API de Saudação (Backend):** O sistema deve expor um endpoint (`GET /api/saudacao`) que retorne metadados (mensagem, tecnologia, data/hora) estritamente no formato JSON.
+*   **RF03 - Interatividade no Frontend:** A interface web deve possuir uma funcionalidade (botão) que consuma a API de Saudação via requisição assíncrona (JavaScript/Fetch) e exiba os dados na tela sem recarregar a página.
 *   **RF04 - Simulação de Geração de Conteúdo AI:** O sistema deve ter um endpoint (`POST /ia/gerar`) que simule a geração de conteúdo usando um modelo Gemini-Pro, recebendo um `prompt` e retornando um texto simulado.
+*   **RF05 - Monitoramento de Status (Health Check):** O sistema deve expor um endpoint (`GET /ia/status`) para verificar o estado operacional do serviço de IA simulado.
 
 ### 2.2 Requisitos Não-Funcionais (RNF)
 *Como o sistema se comporta.*
@@ -83,6 +84,26 @@ Antes de começar, garanta que você tem as ferramentas certas. Não confunda o 
     *   📥 [Baixar GitHub Desktop](https://desktop.github.com/)
 *   **VS Code (Recomendado):** O editor de código que usaremos. Já vem com integração Git.
     *   📥 [Baixar VS Code](https://code.visualstudio.com/)
+
+### 3.1.1 Instalando o Google Cloud SDK (Para Deploy Local)
+Você pode encontrar o SDK e mais informações em: [Google Cloud SDK](https://cloud.google.com/sdk).
+
+*Estas instruções são para quem deseja controlar o Google Cloud diretamente do seu próprio terminal, sem usar o Cloud Shell.*
+
+**Windows:**
+1.  Download `GoogleCloudSDK-*.exe`.
+2.  Execute instalador.
+3.  Siga prompts.
+
+**Linux:**
+1.  `curl https://sdk.cloud.google.com | bash`
+2.  Execute `gcloud init`.
+
+**macOS:**
+1.  Download `GoogleCloudSDK-*.zip`.
+2.  Descompacte.
+3.  Execute `install.sh`.
+4.  Execute `gcloud init`.
 
 ### 3.2 O Conceito (Sem "Tecnês")
 
@@ -566,3 +587,33 @@ Após o deploy, a engenharia não acaba. Precisamos monitorar. No console do Goo
 Tente alterar o main.py para receber um parâmetro na URL, por exemplo /saudacao/Daniel, e retornar {"message": "Olá, Daniel"}. Dica: Pesquise por "Flask Dynamic Routing".
 
 Outro desafio: Descomente o código do Gemini na rota /ia/gerar do main.py, obtenha uma API Key do Google AI Studio e faça sua API interagir com o Gemini de verdade!
+
+---
+
+## 8. Materiais Complementares e Referências
+
+Aqui estão links essenciais para aprofundar seus estudos, acompanhar eventos e entender a parte legal e de segurança da nuvem.
+
+### 🚀 Eventos e Comunidade
+*   **[Google Cloud Next '26](https://www.googlecloudevents.com/next-vegas):** O maior evento do ano sobre Google Cloud.
+*   **[Next '26 para Startups](https://www.googlecloudevents.com/next-vegas/startups):** Trilhas específicas para novos negócios.
+
+### 📚 Aprendizado e Desenvolvimento
+*   **[Google Cloud Skills Boost](http://skills.google/):** A plataforma oficial de cursos e laboratórios práticos.
+*   **[Google Developers](https://developers.google.com/):** Documentação técnica e recursos para desenvolvedores.
+
+### 🛠️ Ferramentas e Serviços
+*   **[Google Cloud Run](https://cloud.google.com/run):** Documentação oficial do serviço Serverless que usamos.
+*   **[Google Cloud SDK (CLI)](https://cloud.google.com/sdk):** Ferramenta de linha de comando para interagir com a GCP.
+*   **[Projeto Prático da Aula (Demo)](https://projeto-aula-cloud-1053493092198.us-central1.run.app/):** Exemplo da aplicação rodando em produção.
+
+### ⚖️ Documentação, Compliance e Segurança
+*   **[Termos de Serviço](https://policies.google.com/terms?hl=pt-BR):** Regras do jogo.
+*   **[Trust Center (Segurança)](https://cloud.google.com/trust-center?hl=pt-BR):** Central de confiança e segurança da Google.
+*   **[Compliance](https://cloud.google.com/compliance?hl=pt-BR):** Conformidade com regulamentações globais.
+*   **[Certificação ISO/IEC 27001](https://cloud.google.com/security/compliance/iso-27001?hl=pt-BR):** Detalhes sobre a certificação de segurança da informação.
+
+### 🛡️ Security Command Center
+Ferramenta avançada para monitoramento de ameaças e postura de segurança.
+*   **[Visão Geral (Standard, Premium, Enterprise)](https://docs.cloud.google.com/security-command-center/docs/security-command-center-overview)**
+*   **[Página do Produto](https://cloud.google.com/security/products/security-command-center)**

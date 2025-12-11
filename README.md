@@ -45,6 +45,12 @@ aula_cloud/
     ```
 2.  **Siga as instruções do [Manual do Aluno](Manual_Aluno_Cloud_Pro.md) para configurar seu ambiente e fazer o deploy!**
 
+## Links Rápidos
+
+*   **[Demo da Aplicação (Cloud Run)](https://projeto-aula-cloud-1053493092198.us-central1.run.app/)**
+*   **[Google Cloud Skills Boost](http://skills.google/)**
+*   **[Documentação Google Cloud Run](https://cloud.google.com/run)**
+
 ---
 
 **Tags:** `cloud`, `devops`, `gcp`, `python`, `ia`, `ai`
